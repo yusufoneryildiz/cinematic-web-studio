@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mavera Collection — Istanbul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Pinyon+Script&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<style>
+:root{--ink:#1a1919;--mute:#71716f;--gold:#b8976a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#000}
+body{font-family:Manrope,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.film,body.film *{cursor:none!important}
+img{display:block;width:100%;height:100%;object-fit:cover}
+figure{overflow:hidden}
+.caps{font-family:'Cormorant Garamond',serif;font-weight:300;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+.script{font-family:'Pinyon Script',cursive;font-weight:400;text-transform:none;letter-spacing:0}
+.label{font-size:.62vw;letter-spacing:.2em;text-transform:uppercase;font-weight:600;line-height:1.5}
+.small{font-size:.9vw;line-height:1.7}
+
+/* ---------- intro curtain ---------- */
+#curtain{position:fixed;inset:0;z-index:100;background:#000;color:#fff;display:grid;place-items:center}
+#curtain .caps{font-size:1.6vw;letter-spacing:.5em;overflow:hidden}
+#curtain .caps span{display:inline-block;transform:translateY(110%)}
+#curtain .bar{position:absolute;left:50%;bottom:8vh;width:10vw;height:1px;background:#ffffff26;transform:translateX(-50%)}
+#curtain .bar i{display:block;height:100%;width:0;background:#fff}
+
+/* ---------- header ---------- */
+header{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1.4vw 2vw;color:#fff;mix-blend-mode:difference;font-size:.78vw;font-weight:500}
+header .menu{display:flex;align-items:center;gap:.8vw}
+header .menu i{display:block;width:1.3vw;height:1px;background:#fff;box-shadow:0 .35vw 0 #fff}
+header .logo{position:absolute;left:50%;top:1.2vw;transform:translateX(-50%);text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.05vw;letter-spacing:.32em;line-height:1.1;white-space:nowrap}
+header .logo small{display:block;font:500 .45vw Manrope;letter-spacing:.4em;margin-top:.25vw}
+header .mono{position:absolute;left:50%;top:1.1vw;transform:translateX(-50%);width:1.9vw;height:1.9vw;opacity:0}
+
+/* ---------- 1 · hero ---------- */
+.hero{position:sticky;top:0;height:100vh;background:#000;color:#fff;overflow:hidden;z-index:1}
+#ribbon{position:absolute;inset:0;width:100%;height:100%}
+.hero .t{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);text-align:center;z-index:2;white-space:nowrap}
+.hero .script{font-size:5.4vw;display:block;margin-bottom:-.9vw;opacity:0}
+.hero .caps{font-size:4.7vw;display:block;opacity:0}
+.hero .map{position:absolute;right:2vw;bottom:2vw;width:12.5vw;height:7.2vw;z-index:2;overflow:hidden;opacity:0;color:#fff}
+.hero .map img{filter:grayscale(1) contrast(1.1) brightness(.7)}
+.hero .map b{position:absolute;left:.7vw;top:.4vw;font:300 1.9vw 'Cormorant Garamond'}
+.hero .map span{position:absolute;right:.7vw;bottom:.6vw;font-size:.5vw;letter-spacing:.18em;text-align:right;line-height:1.4;font-weight:600}
+.hero .scroll{position:absolute;left:2vw;bottom:2vw;width:1.8vw;height:1.8vw;border:1px solid #fff5;border-radius:50%;display:grid;place-items:center;z-index:2;font-size:.7vw}
+.hero .scroll::after{content:"↓";animation:bob 1.8s ease-in-out infinite}
+
+/* ---------- 2 · triptych ---------- */
+.s2{position:relative;z-index:2;background:#fff;padding:13vw 0 8vw;text-align:center}
+.s2 .label{margin-bottom:1.6vw}
+.s2 h2{font-size:3.1vw}
+.trip{position:relative;height:46vw;margin-top:5vw}
+.trip .c{position:absolute;left:50%;top:0;width:26vw;height:36vw;transform:translateX(-50%)}
+.trip .l{position:absolute;left:0;top:14vw;width:16vw;height:20vw}
+.trip .r{position:absolute;right:0;top:18vw;width:18vw;height:16vw}
+
+/* ---------- 3 · big editorial text ---------- */
+.s3{position:relative;z-index:2;background:#fff;padding:4vw 1vw 0;height:62vw}
+.s3 .big{font-size:4.1vw;line-height:1.02;max-width:60vw;position:relative;z-index:2}
+.ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.ln>span{display:inline-block}
+.s3 .script{font-size:3.6vw;margin-left:16vw;display:inline-block;margin-top:.6vw;position:relative;z-index:3}
+.s3 .a{position:absolute;right:0;top:15vw;width:40vw;height:30vw}
+.s3 .b{position:absolute;left:1vw;top:30vw;width:15vw;height:17vw}
+.s3 .d{position:absolute;left:30vw;top:40vw;width:18vw;height:13vw}
+
+/* ---------- 4 · pinned gallery ---------- */
+.s4{position:relative;z-index:2;height:100vh;overflow:hidden;background:#000;color:#fff}
+.s4 .fr{position:absolute;inset:0;clip-path:inset(100% 0 0 0)}
+.s4 .fr:first-child{clip-path:inset(0)}
+.s4 .fr img{transform:scale(1.18)}
+.shade{position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 55%,#0006,#0000 70%),linear-gradient(#0000 60%,#0007);z-index:3}
+.s4 .t{position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);text-align:center;z-index:4;white-space:nowrap}
+.s4 .caps{font-size:3.1vw}
+.s4 .label{margin-top:1.1vw;font-size:.55vw}
+
+/* ---------- 5 · dark statement ---------- */
+.s5{position:relative;z-index:2;background:#000;color:#fff;padding:12vw 1vw 10vw;overflow:hidden;min-height:62vw}
+.s5 canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.s5 .big{position:relative;z-index:2;font-size:4.4vw;line-height:1.02;max-width:52vw}
+.w{opacity:.18;display:inline-block}
+.s5 .rise{position:absolute;left:58vw;top:14vw;width:22vw;height:30vw;z-index:3}
+.s5 p{position:absolute;left:1.2vw;top:44vw;width:26vw;z-index:2;color:#fffa}
+
+/* ---------- 6 · portrait reveal ---------- */
+.s6{position:relative;z-index:2;height:100vh;background:#000;color:#fff;overflow:hidden}
+.s6 figure{position:absolute;inset:0;clip-path:circle(18% at 50% 55%)}
+.s6 img{filter:grayscale(1) contrast(1.15) brightness(.8);object-position:50% 20%;transform:scale(1.25)}
+.s6 .t{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;z-index:3}
+.s6 .label{font-size:.56vw;opacity:.85}
+.s6 .script{font-size:8vw;display:block;margin-top:.4vw;opacity:0}
+
+/* ---------- 7 · three horizons (curved 3D carousel) ---------- */
+.s7{position:relative;z-index:2;height:100vh;background:#000;color:#fff;overflow:hidden}
+.s7 canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.8}
+.s7 .intro{position:absolute;left:50%;top:13vh;transform:translateX(-50%);width:34vw;text-align:center;z-index:4;color:#fffc}
+.s7 .title{position:absolute;left:50%;top:22vh;transform:translateX(-50%);text-align:center;z-index:4;white-space:nowrap}
+.s7 .title .script{font-size:5vw;display:block;margin-bottom:-1vw}
+.s7 .title .caps{font-size:5vw}
+.stage{position:absolute;inset:0;perspective:1100px;perspective-origin:50% 55%;z-index:3}
+.cyl{position:absolute;left:50%;top:58%;transform-style:preserve-3d}
+.cyl figure{position:absolute;width:30vw;height:19vw;left:-15vw;top:-9.5vw;backface-visibility:hidden}
+.cyl figcaption{position:absolute;left:.8vw;bottom:.6vw;font-size:.55vw;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#fff;text-shadow:0 0 1vw #000}
+.s7 .explore{position:absolute;left:50%;bottom:6vh;transform:translateX(-50%);z-index:4;text-align:center}
+.s7 .explore .prog{width:12vw;height:1px;background:#ffffff33;margin-top:.8vw}
+.s7 .explore .prog i{display:block;height:100%;width:0;background:#fff}
+
+/* ---------- 8 · principles intro ---------- */
+.s8{position:relative;z-index:2;height:100vh;background:#fff;overflow:hidden}
+.s8 .caps{position:absolute;left:50%;top:50%;font-size:11vw;z-index:2;mix-blend-mode:difference;color:#fff;white-space:nowrap}
+.s8 figure{position:absolute;width:24vw;height:32vw}
+.s8 .p1{left:14vw;top:12vh}.s8 .p2{right:14vw;top:30vh}
+.s8 .label{position:absolute;left:50%;bottom:7vh;transform:translateX(-50%);text-align:center}
+
+/* ---------- 9 · horizontal sticky cards ---------- */
+.s9{position:relative;z-index:2;height:100vh;background:#fff;overflow:hidden}
+.track{position:absolute;top:0;left:0;height:100%;display:flex;align-items:center;padding-left:6vw;gap:8vw;will-change:transform}
+.card{flex:none;width:72vw;height:78vh;display:grid;grid-template-columns:30vw 1fr;gap:4vw;align-items:center}
+.card figure{height:100%}
+.card .no{font-size:.62vw;letter-spacing:.2em;font-weight:600;color:var(--mute)}
+.card h4{margin:1.4vw 0 2vw}
+.card h4 .script{font-size:4.6vw;display:block;margin-bottom:-1vw}
+.card h4 .caps{font-size:4.2vw}
+.card p{max-width:24vw;color:#4a4948}
+.card .mini{display:flex;gap:1.2vw;align-items:flex-end;margin-top:3vw}
+.card .mini figure{width:14vw;height:9vw}
+.card .mini span{font-size:.62vw;letter-spacing:.18em;text-transform:uppercase;font-weight:600;max-width:9vw;line-height:1.5}
+.s9 .count{position:absolute;right:2vw;bottom:2vw;font:300 1.6vw 'Cormorant Garamond';z-index:3}
+.s9 .line{position:absolute;left:6vw;right:10vw;bottom:2.9vw;height:1px;background:#0000001a}
+.s9 .line i{display:block;height:100%;width:0;background:var(--ink)}
+
+/* ---------- 10 · process statement ---------- */
+.s10{position:relative;z-index:2;height:100vh;background:#000;color:#fff;display:flex;align-items:center;padding:0 8vw}
+.s10 .caps{font-size:3vw;line-height:1.12;text-align:center}
+.s10 .label{position:absolute;left:50%;top:14vh;transform:translateX(-50%);opacity:.6}
+
+/* ---------- 11 · location map ---------- */
+.s11{position:relative;z-index:2;height:100vh;background:#0b0b0b;color:#fff;overflow:hidden}
+.s11 .map{position:absolute;inset:-6%;transform-origin:62% 50%}
+.s11 .map svg{width:100%;height:100%}
+.s11 .intro{position:absolute;left:3vw;top:16vh;z-index:3}
+.s11 .intro .script{font-size:4.4vw;display:block;margin-bottom:-.9vw}
+.s11 .intro .caps{font-size:4.4vw}
+.pin{position:absolute;z-index:3;transform:translate(-50%,-50%) scale(0)}
+.pin i{display:block;width:.9vw;height:.9vw;border-radius:50%;background:#fff;box-shadow:0 0 0 .5vw #ffffff22,0 0 0 1.1vw #ffffff0f}
+.pin b{position:absolute;left:1.6vw;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.6vw;letter-spacing:.2em;font-weight:600}
+.s11 .cards{position:absolute;left:3vw;bottom:8vh;width:26vw;height:15vw;z-index:3}
+.lcard{position:absolute;inset:0;display:grid;grid-template-columns:10vw 1fr;gap:1.2vw;opacity:0}
+.lcard figure{height:100%}
+.lcard .caps{font-size:1.7vw;margin:.6vw 0}
+.lcard .small{font-size:.75vw;color:#fffa}
+
+/* ---------- 12 · quotes ---------- */
+.s12{position:relative;z-index:2;height:100vh;background:#fff;overflow:hidden}
+.q{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:70vw;text-align:center;opacity:0}
+.q .caps{font-size:3vw;line-height:1.1}
+.q .who{margin-top:2.4vw;font-size:.62vw;letter-spacing:.2em;font-weight:600;text-transform:uppercase}
+.q .who em{display:block;font-style:normal;color:var(--mute);margin-top:.3vw;font-weight:500}
+.s12 .ctr{position:absolute;left:50%;bottom:9vh;transform:translateX(-50%);font:300 1.4vw 'Cormorant Garamond';letter-spacing:.1em}
+.s12 .face{position:absolute;right:3vw;top:14vh;width:11vw;height:14vw}
+.cursor{position:fixed;left:0;top:0;width:6vw;height:6vw;margin:-3vw 0 0 -3vw;border-radius:50%;border:1px solid #1a191955;z-index:60;pointer-events:none;display:grid;place-items:center;font-size:.55vw;letter-spacing:.18em;font-weight:600;opacity:0;color:var(--ink)}
+
+/* ---------- 13 · register ---------- */
+.s13{position:relative;z-index:2;height:100vh;background:#fff;overflow:hidden}
+.s13 figure{position:absolute;left:50%;top:50%;width:30vw;height:40vh;transform:translate(-50%,-50%)}
+.s13 .form{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30vw;background:#fff;padding:3vw 2.6vw;text-align:center;opacity:0;z-index:3}
+.s13 .form .caps{font-size:2.2vw;margin:1vw 0 2vw}
+.s13 .form .f{border-bottom:1px solid #0000002a;text-align:left;font-size:.8vw;color:var(--mute);padding:1vw 0}
+.s13 .form .btn{margin-top:2vw;display:inline-block;background:var(--ink);color:#fff;font-size:.62vw;letter-spacing:.2em;font-weight:600;padding:1.1vw 2.4vw;text-transform:uppercase}
+
+/* ---------- footer ---------- */
+footer{position:relative;z-index:2;background:#000;color:#fff;padding:5vw 0 2vw;overflow:hidden}
+footer .menu{display:flex;justify-content:center;gap:3vw;font-size:.72vw;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#fffb}
+.marquee{white-space:nowrap;margin:5vw 0 4vw}
+.marquee .caps{display:inline-block;font-size:9vw;padding-right:4vw}
+.marquee .script{font-size:8vw;padding-right:4vw;display:inline-block}
+footer .row{display:flex;justify-content:space-between;padding:0 2vw;font-size:.7vw;color:#fff8}
+
+@keyframes bob{50%{transform:translateY(.25vw)}}
+</style>
+</head>
+<body>
+
+<div id="curtain">
+  <div class="caps"><span>The Mavera Collection</span></div>
+  <div class="bar"><i></i></div>
+</div>
+
+<header>
+  <div class="menu"><i></i>Menu</div>
+  <div class="logo">THE MAVERA<small>COLLECTION</small></div>
+  <svg class="mono" viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="1.1"><circle cx="20" cy="20" r="18.5"/><path d="M11 28V13l9 11 9-11v15"/></svg>
+  <div>3D Map</div>
+</header>
+<div class="cursor" id="cursor">DRAG</div>
+
+<!-- 1 · HERO -->
+<section class="hero" id="hero">
+  <canvas id="ribbon"></canvas>
+  <div class="t">
+    <span class="script">Where rarity</span>
+    <span class="caps">becomes home</span>
+  </div>
+  <a class="map"><img src="img/loc-sea.jpg" alt=""><b>3D</b><span>EXPLORE<br>THE MAP</span></a>
+  <div class="scroll"></div>
+</section>
+
+<!-- 2 · TRIPTYCH -->
+<section class="s2">
+  <div class="label">A private<br>selection</div>
+  <h2 class="caps">Of the Bosphorus'<br>finest residences</h2>
+  <div class="trip">
+    <figure class="l"><img src="img/spec-1.jpg" alt=""></figure>
+    <figure class="c"><img src="img/apt-hero.jpg" alt=""></figure>
+    <figure class="r"><img src="img/gal-4.jpg" alt=""></figure>
+  </div>
+</section>
+
+<!-- 3 · BIG TEXT -->
+<section class="s3">
+  <h3 class="big caps">
+    <span class="ln"><span>One-of-a-kind homes</span></span>
+    <span class="ln"><span>along Istanbul's most</span></span>
+    <span class="ln"><span>storied shoreline.</span></span>
+    <span class="ln"><span>Made for those who</span></span>
+  </h3>
+  <span class="script">live beautifully</span>
+  <figure class="a"><img src="img/closing.jpg" alt=""></figure>
+  <figure class="b"><img src="img/day-1.jpg" alt=""></figure>
+  <figure class="d"><img src="img/spec-2.jpg" alt=""></figure>
+</section>
+
+<!-- 4 · PINNED GALLERY -->
+<section class="s4" id="s4">
+  <div class="fr"><img src="img/day-3.jpg" alt=""></div>
+  <div class="fr"><img src="img/gal-2.jpg" alt=""></div>
+  <div class="fr"><img src="img/pent-2.jpg" alt=""></div>
+  <div class="fr"><img src="img/panorama.jpg" alt=""></div>
+  <div class="shade"></div>
+  <div class="t">
+    <div class="caps">Not every home<br>earns its name</div>
+    <div class="label">Selected, never simply built</div>
+  </div>
+</section>
+
+<!-- 5 · DARK STATEMENT -->
+<section class="s5" id="s5">
+  <canvas id="ribbon2"></canvas>
+  <h3 class="big caps words">Some places you visit. Others stay with you forever.</h3>
+  <figure class="rise"><img src="img/lobby.jpg" alt=""></figure>
+  <p class="small">A Mavera residence is measured by what remains after you leave it — the evening light on the water, the stillness of the rooms, a view that is never quite the same twice.</p>
+</section>
+
+<!-- 6 · PORTRAIT -->
+<section class="s6" id="s6">
+  <figure><img src="img/hero-model.jpg" alt=""></figure>
+  <div class="t">
+    <div class="label">There is a word for what you feel<br>the moment you arrive.<br>We named the collection after it</div>
+    <span class="script">Mavera</span>
+  </div>
+</section>
+
+<!-- 7 · THREE HORIZONS -->
+<section class="s7" id="s7">
+  <canvas id="ribbon3"></canvas>
+  <p class="intro small">Every residence belongs to one of three horizons — the water, the skyline and the gardens of the old city.</p>
+  <div class="title"><span class="script">The three</span><span class="caps">Horizons</span></div>
+  <div class="stage"><div class="cyl" id="cyl"></div></div>
+  <div class="explore"><div class="label">Scroll to explore</div><div class="prog"><i id="prog7"></i></div></div>
+</section>
+
+<!-- 8 · PRINCIPLES INTRO -->
+<section class="s8" id="s8">
+  <figure class="p1"><img src="img/mat-1.jpg" alt=""></figure>
+  <figure class="p2"><img src="img/svc-2.jpg" alt=""></figure>
+  <h2 class="caps">Principles</h2>
+  <div class="label">Five rules every<br>residence must pass</div>
+</section>
+
+<!-- 9 · HORIZONTAL CARDS -->
+<section class="s9" id="s9">
+  <div class="track" id="track"></div>
+  <div class="line"><i id="line9"></i></div>
+  <div class="count" id="count9">01 / 05</div>
+</section>
+
+<!-- 10 · PROCESS -->
+<section class="s10" id="s10">
+  <div class="label">The selection</div>
+  <h3 class="caps words">We began by saying no — to the ordinary, to the crowded, to the almost right. What remained is a handful of addresses that could not exist anywhere else, held to a standard we refuse to lower.</h3>
+</section>
+
+<!-- 11 · LOCATION -->
+<section class="s11" id="s11">
+  <div class="map" id="map">
+    <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+      <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff08"/></pattern></defs>
+      <rect width="1600" height="1000" fill="url(#g)"/>
+      <path d="M1180 -20 C1120 120 1010 170 1030 300 C1050 420 930 470 900 560 C870 650 960 720 880 820 C820 900 700 930 620 1020 L560 1020 C640 920 760 890 810 800 C880 690 790 640 830 540 C870 440 980 410 960 290 C940 160 1050 110 1110 -20Z" fill="#141a22" stroke="#ffffff22"/>
+      <g stroke="#ffffff10" fill="none"><path d="M0 200 C300 260 600 180 900 240"/><path d="M0 420 C260 380 520 470 820 430"/><path d="M1080 360 C1260 330 1420 400 1600 360"/><path d="M1000 620 C1200 660 1400 600 1600 650"/><path d="M200 0 C240 300 180 600 260 1000"/><path d="M1340 0 C1300 300 1380 700 1320 1000"/></g>
+      <text x="990" y="470" fill="#ffffff30" font-size="16" letter-spacing="8" font-family="Manrope" transform="rotate(-62 990 470)">BOSPHORUS</text>
+    </svg>
+  </div>
+  <div class="intro"><span class="script">The collection</span><span class="caps">On the map</span></div>
+  <div class="pin" style="left:61%;top:31%"><i></i><b>YENİKÖY</b></div>
+  <div class="pin" style="left:57%;top:47%"><i></i><b>BEBEK</b></div>
+  <div class="pin" style="left:67%;top:55%"><i></i><b>KANDİLLİ</b></div>
+  <div class="pin" style="left:46%;top:66%"><i></i><b>NİŞANTAŞI</b></div>
+  <div class="cards">
+    <div class="lcard"><figure><img src="img/loc-sea.jpg" alt=""></figure><div><div class="label">01 · Waterfront</div><div class="caps">Yeniköy<br>Yalı</div><div class="small">Six bedrooms on the water, a private pier and a garden older than the city's bridges.</div></div></div>
+    <div class="lcard"><figure><img src="img/pent-2.jpg" alt=""></figure><div><div class="label">02 · Penthouse</div><div class="caps">Bebek<br>Heights</div><div class="small">A full floor above the bay, glass on three sides and sunsets over the old city.</div></div></div>
+    <div class="lcard"><figure><img src="img/park-1.jpg" alt=""></figure><div><div class="label">03 · Garden</div><div class="caps">Kandilli<br>Gardens</div><div class="small">Four villas hidden among century-old trees on the Asian shore.</div></div></div>
+    <div class="lcard"><figure><img src="img/infra-2.jpg" alt=""></figure><div><div class="label">04 · City</div><div class="caps">Nişantaşı<br>Residence</div><div class="small">Nine apartments on the city's most elegant street, with a private concierge.</div></div></div>
+  </div>
+</section>
+
+<!-- 12 · QUOTES -->
+<section class="s12" id="s12">
+  <figure class="face"><img src="img/adv-2.jpg" alt=""></figure>
+  <div class="q"><div class="caps">A home should not compete for attention. It should give you back your time, your silence and your view.</div><div class="who">The Mavera Founders<em>Istanbul</em></div></div>
+  <div class="q"><div class="caps">We have walked away from more homes than we have ever accepted. That is the whole method.</div><div class="who">Selection Committee<em>The Mavera Collection</em></div></div>
+  <div class="q"><div class="caps">Luxury is not what you add to a place. It is what you are brave enough to leave out.</div><div class="who">Design Council<em>The Mavera Collection</em></div></div>
+  <div class="ctr" id="ctr">1 — 3</div>
+</section>
+
+<!-- 13 · REGISTER -->
+<section class="s13" id="s13">
+  <figure><img src="img/gal-3.jpg" alt=""></figure>
+  <div class="form">
+    <div class="label">By invitation</div>
+    <div class="caps">Request a<br>private viewing</div>
+    <div class="f">Full name</div><div class="f">Email</div><div class="f">Phone</div>
+    <div class="btn">Send request</div>
+  </div>
+</section>
+
+<footer>
+  <div class="menu"><span>Residences</span><span>Horizons</span><span>Principles</span><span>Location</span><span>Contact</span></div>
+  <div class="marquee"><div id="mq" style="display:inline-block"></div></div>
+  <div class="row"><span>© 2026 The Mavera Collection · Istanbul</span><span>Concept design by DEDWHOL</span></div>
+</footer>
+
+<!-- 3D ribbons (Three.js) -->
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+function ribbons(canvas, opts = {}) {
+  const r = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  r.setPixelRatio(Math.min(devicePixelRatio, 2));
+  r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = .75;
+  const scene = new THREE.Scene();
+  const pm = new THREE.PMREMGenerator(r);
+  scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = .28;
+  const cam = new THREE.PerspectiveCamera(35, 1, 0.1, 100); cam.position.set(0, 0, 11);
+  const mat = new THREE.MeshPhysicalMaterial({ color: 0x020202, metalness: .6, roughness: .22, clearcoat: 1, clearcoatRoughness: .08, side: THREE.DoubleSide });
+  const g = new THREE.Group(); scene.add(g);
+  const band = (pts, w) => {
+    const curve = new THREE.CatmullRomCurve3(pts.map(p => new THREE.Vector3(...p)), true);
+    const N = 400, pos = [], idx = [], up = new THREE.Vector3(0, 1, 0);
+    for (let i = 0; i <= N; i++) {
+      const t = i / N, p = curve.getPointAt(t), tan = curve.getTangentAt(t);
+      const side = new THREE.Vector3().crossVectors(tan, up).normalize().applyAxisAngle(tan, Math.sin(t * Math.PI * 2) * .9).multiplyScalar(w);
+      pos.push(p.x + side.x, p.y + side.y, p.z + side.z, p.x - side.x, p.y - side.y, p.z - side.z);
+      if (i < N) idx.push(i * 2, i * 2 + 1, i * 2 + 2, i * 2 + 1, i * 2 + 3, i * 2 + 2);
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setIndex(idx); geo.computeVertexNormals();
+    return new THREE.Mesh(geo, mat);
+  };
+  g.add(band([[-6, 2, -1], [-1, 3.6, 1.5], [4, 2.4, 0], [5, -1, -2], [0, -3.2, 1], [-5, -1.5, 0]], .75));
+  g.add(band([[-5, -2.5, 2], [0, 0.5, -2], [5, 3.2, 1], [2, 4.5, -1], [-3, 3, 0.5]], .55));
+  g.add(band([[-7, 0, -3], [-2, -4, -1], [4, -3.4, 1], [7, 0.5, -2], [2, 1.2, 2]], .45));
+  const key = new THREE.DirectionalLight(0xffffff, 1.3); key.position.set(-3, 5, 6); scene.add(key);
+  const rim = new THREE.DirectionalLight(0xffffff, .8); rim.position.set(6, -2, -4); scene.add(rim);
+  g.scale.setScalar(opts.scale || 1);
+  const size = () => { const w = canvas.clientWidth, h = canvas.clientHeight; r.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); };
+  size(); addEventListener('resize', size);
+  const t0 = performance.now(), off = opts.off || 0;
+  let on = true;
+  new IntersectionObserver(e => on = e[0].isIntersecting).observe(canvas);
+  (function loop() {
+    if (on) {
+      const t = (performance.now() - t0) / 1000 + off;
+      g.rotation.y = -.2 + t * .09; g.rotation.x = .35 + Math.sin(t * .3) * .12; g.rotation.z = .1 + Math.sin(t * .2) * .08;
+      r.render(scene, cam);
+    }
+    requestAnimationFrame(loop);
+  })();
+}
+ribbons(document.getElementById('ribbon'));
+ribbons(document.getElementById('ribbon2'), { scale: 1.3, off: 20 });
+ribbons(document.getElementById('ribbon3'), { scale: 1.5, off: 45 });
+</script>
+
+<script>
+const q = new URLSearchParams(location.search);
+gsap.registerPlugin(ScrollTrigger);
+const lenis = new Lenis({ duration: 1.5, smoothWheel: true });
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+const $ = s => document.querySelector(s), $$ = s => gsap.utils.toArray(s);
+const scrub = (trigger, start = 'top bottom', end = 'bottom top') => ({ trigger, start, end, scrub: true });
+
+// ---- generated content: carousel, cards, marquee ----
+const HOR = [['loc-sea', 'The water'], ['arch-3', 'The skyline'], ['park-1', 'The gardens'], ['panorama', 'The water'], ['hero', 'The skyline'], ['gal-3', 'The gardens'], ['day-4', 'The skyline'], ['loc-park', 'The gardens']];
+$('#cyl').innerHTML = HOR.map(([i, c]) => `<figure><img src="img/${i}.jpg" alt=""><figcaption>${c}</figcaption></figure>`).join('');
+const CARDS = [
+  ['Generous', 'Light', 'apt-hero', 'day-2', 'Rooms are planned around the sun. Every living space faces the water or the sky, and no ceiling is lower than three metres.', 'Floor-to-ceiling glass in every principal room'],
+  ['Singular', 'Addresses', 'arch-1', 'loc-sea', 'Each home sits on a site that cannot be repeated — a shoreline, a hilltop, a street with two centuries of history.', 'No more than nine homes per address'],
+  ['Quiet', 'Craftsmanship', 'mat-1', 'swatch-5', 'Stone, oak and brass chosen by hand and finished by artisans who sign their work, never by catalogue.', 'Materials sourced from four countries'],
+  ['Endless', 'Horizons', 'pent-2', 'panorama', 'A view is not a feature, it is the reason. We walk away from any home whose view can be built over.', 'Protected sightlines, guaranteed'],
+  ['Complete', 'Privacy', 'fit-1', 'day-5', 'Private entrances, discreet staff and spaces designed so that you meet only the people you choose to.', 'Concierge available day and night'],
+];
+$('#track').innerHTML = CARDS.map(([s, c, a, b, t, m], i) => `
+  <article class="card"><figure><img src="img/${a}.jpg" alt=""></figure>
+  <div><div class="no">Principle 0${i + 1}</div><h4><span class="script">${s}</span><span class="caps">${c}</span></h4>
+  <p class="small">${t}</p><div class="mini"><figure><img src="img/${b}.jpg" alt=""></figure><span>${m}</span></div></div></article>`).join('');
+$('#mq').innerHTML = '<span class="caps">Beyond the ordinary</span><span class="script">Mavera</span>'.repeat(4);
+$$('.words').forEach(w => w.innerHTML = w.textContent.split(' ').map(x => `<span class="w">${x}</span>`).join(' '));
+
+// ---- intro curtain ----
+lenis.stop();
+gsap.timeline({ onComplete: () => lenis.start() })
+  .to('#curtain .caps span', { y: 0, duration: 1.1, ease: 'power3.out' })
+  .to('#curtain .bar i', { width: '100%', duration: 1.2, ease: 'power1.inOut' }, '<')
+  .to('#curtain .caps span', { y: '-110%', duration: .8, ease: 'power3.in' }, '+=.2')
+  .to('#curtain', { yPercent: -100, duration: 1.1, ease: 'power4.inOut' }, '-=.3')
+  .to('.hero .script', { opacity: 1, duration: 1.6, ease: 'power2.out' }, '-=.4')
+  .fromTo('.hero .caps', { opacity: 0, letterSpacing: '.18em' }, { opacity: 1, letterSpacing: '.01em', duration: 2, ease: 'power3.out' }, '-=1.2')
+  .to('.hero .map', { opacity: 1, duration: 1 }, '-=1');
+
+// logo → monogram
+gsap.timeline({ scrollTrigger: { trigger: '.s2', start: 'top 60%', toggleActions: 'play none none reverse' } })
+  .to('header .logo', { opacity: 0, y: -10, duration: .4 }).to('header .mono', { opacity: 1, duration: .4 }, '<.2');
+
+// 1 → 2
+gsap.to('.hero .t', { yPercent: -40, opacity: 0, scale: .92, ease: 'none', scrollTrigger: scrub('.s2', 'top bottom', 'top 30%') });
+
+// 2 · triptych
+gsap.fromTo('.trip .c', { width: '22vw', height: '30vw' }, { width: '34vw', height: '44vw', ease: 'none', scrollTrigger: scrub('.trip', 'top 90%', 'center 45%') });
+gsap.fromTo('.trip .c img', { scale: 1.3 }, { scale: 1, ease: 'none', scrollTrigger: scrub('.trip') });
+gsap.fromTo('.trip .l', { y: '8vw' }, { y: '-8vw', ease: 'none', scrollTrigger: scrub('.trip') });
+gsap.fromTo('.trip .r', { y: '12vw' }, { y: '-12vw', ease: 'none', scrollTrigger: scrub('.trip') });
+gsap.from('.s2 h2, .s2 .label', { y: 40, opacity: 0, duration: 1.4, stagger: .15, ease: 'power3.out', scrollTrigger: { trigger: '.s2', start: 'top 70%' } });
+
+// 3 · big editorial text
+gsap.from('.s3 .ln>span', { yPercent: 105, duration: 1.3, stagger: .1, ease: 'power4.out', scrollTrigger: { trigger: '.s3', start: 'top 75%' } });
+gsap.from('.s3 .script', { opacity: 0, x: -30, duration: 1.6, delay: .5, scrollTrigger: { trigger: '.s3', start: 'top 75%' } });
+[['.s3 .a', 6, -6], ['.s3 .b', 12, -8], ['.s3 .d', 16, -6]].forEach(([s, a, b]) => {
+  gsap.fromTo(s, { y: a + 'vw' }, { y: b + 'vw', ease: 'none', scrollTrigger: scrub('.s3') });
+  gsap.fromTo(s + ' img', { scale: 1.25 }, { scale: 1, ease: 'none', scrollTrigger: scrub('.s3') });
+});
+
+// 4 · pinned gallery
+const frs = $$('.s4 .fr');
+const tl4 = gsap.timeline({ scrollTrigger: { trigger: '#s4', start: 'top top', end: '+=' + frs.length * 90 + '%', pin: true, scrub: 1 } });
+frs.forEach((f, i) => {
+  tl4.to(f.querySelector('img'), { scale: 1, duration: 1, ease: 'none' }, i);
+  if (i) tl4.to(f, { clipPath: 'inset(0% 0 0 0)', duration: .6, ease: 'power2.inOut' }, i - .3);
+});
+gsap.from('.s4 .t', { opacity: 0, y: 30, duration: 1.4, scrollTrigger: { trigger: '#s4', start: 'top 60%' } });
+
+// 5 · dark statement
+gsap.to('.s5 .w', { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: scrub('.s5', 'top 70%', 'top 5%') });
+gsap.fromTo('.s5 .rise', { y: '18vw' }, { y: '-6vw', ease: 'none', scrollTrigger: scrub('.s5') });
+gsap.fromTo('.s5 .rise img', { scale: 1.3 }, { scale: 1, ease: 'none', scrollTrigger: scrub('.s5') });
+gsap.from('.s5 p', { opacity: 0, y: 30, duration: 1.4, scrollTrigger: { trigger: '.s5 p', start: 'top 85%' } });
+
+// 6 · portrait: circle opens, word appears
+gsap.timeline({ scrollTrigger: { trigger: '#s6', start: 'top top', end: '+=160%', pin: true, scrub: 1 } })
+  .to('.s6 figure', { clipPath: 'circle(75% at 50% 55%)', duration: 1, ease: 'none' })
+  .to('.s6 img', { scale: 1, duration: 1.4, ease: 'none' }, 0)
+  .to('.s6 .script', { opacity: 1, duration: .5 }, .55)
+  .to('.s6 .label', { opacity: .4, duration: .5 }, .9);
+
+// 7 · curved carousel rotates
+const cyl = $('#cyl'), figs = cyl.querySelectorAll('figure'), STEP = 360 / 11;
+const R = () => innerWidth * .52;
+const layout = () => { figs.forEach((f, i) => f.style.transform = `rotateY(${(i - 1) * STEP}deg) translateZ(${-R()}px)`); gsap.set(cyl, { z: R() * .62 }); };
+layout(); addEventListener('resize', layout);
+gsap.timeline({ scrollTrigger: { trigger: '#s7', start: 'top top', end: '+=260%', pin: true, scrub: 1 } })
+  .fromTo(cyl, { rotationY: 30 }, { rotationY: -(figs.length - 2) * STEP, ease: 'none', duration: 1 })
+  .to('#prog7', { width: '100%', ease: 'none', duration: 1 }, 0)
+  .from('.s7 .title', { opacity: 0, y: 40, duration: .15 }, 0)
+  .from('.s7 .intro', { opacity: 0, duration: .15 }, .05);
+
+// 8 · principles intro: images split, word grows
+gsap.timeline({ scrollTrigger: { trigger: '#s8', start: 'top top', end: '+=120%', pin: true, scrub: 1 } })
+  .fromTo('.s8 .caps', { xPercent: -50, yPercent: -50, scale: .55 }, { xPercent: -50, yPercent: -50, scale: 1.08, ease: 'none', duration: 1 })
+  .fromTo('.s8 .p1', { y: '40vh', x: '10vw' }, { y: '-30vh', x: '-4vw', ease: 'none', duration: 1 }, 0)
+  .fromTo('.s8 .p2', { y: '60vh', x: '-10vw' }, { y: '-40vh', x: '4vw', ease: 'none', duration: 1 }, 0)
+  .fromTo('.s8 figure img', { scale: 1.3 }, { scale: 1, ease: 'none', duration: 1 }, 0);
+
+// 9 · horizontal sticky cards
+const track = $('#track');
+const dist = () => track.scrollWidth - innerWidth + innerWidth * .06;
+gsap.timeline({ scrollTrigger: { trigger: '#s9', start: 'top top', end: () => '+=' + dist() * 1.2, pin: true, scrub: 1, invalidateOnRefresh: true,
+  onUpdate: s => { $('#count9').textContent = '0' + Math.min(5, Math.floor(s.progress * 4.999) + 1) + ' / 05'; } } })
+  .to(track, { x: () => -dist(), ease: 'none', duration: 1 })
+  .to('#line9', { width: '100%', ease: 'none', duration: 1 }, 0)
+  .fromTo('.card > figure img', { scale: 1.25 }, { scale: 1, ease: 'none', duration: 1 }, 0);
+
+// 10 · process: words light up one by one
+gsap.timeline({ scrollTrigger: { trigger: '#s10', start: 'top top', end: '+=150%', pin: true, scrub: 1 } })
+  .to('.s10 .w', { opacity: 1, stagger: .1, ease: 'none' });
+
+// 11 · map: zooms in, pins and cards appear in sequence
+const pins = $$('.pin'), lcs = $$('.lcard');
+const tl11 = gsap.timeline({ scrollTrigger: { trigger: '#s11', start: 'top top', end: '+=260%', pin: true, scrub: 1 } })
+  .fromTo('#map', { scale: 1.35 }, { scale: 1, ease: 'none', duration: 4.4 }, 0)
+  .from('.s11 .intro', { opacity: 0, y: 30, duration: .4 }, 0);
+pins.forEach((p, i) => {
+  tl11.to(p, { scale: 1, duration: .3, ease: 'back.out(3)' }, .3 + i);
+  tl11.to(lcs[i], { opacity: 1, duration: .3 }, .3 + i);
+  if (i < pins.length - 1) tl11.to(lcs[i], { opacity: 0, duration: .3 }, 1.1 + i);
+});
+
+// 12 · quotes
+const qs = $$('.q');
+const tl12 = gsap.timeline({ scrollTrigger: { trigger: '#s12', start: 'top top', end: '+=220%', pin: true, scrub: 1,
+  onUpdate: s => $('#ctr').textContent = Math.min(3, Math.floor(s.progress * 2.999) + 1) + ' — 3' } });
+qs.forEach((qq, i) => {
+  tl12.fromTo(qq, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .35 }, i);
+  if (i < qs.length - 1) tl12.to(qq, { opacity: 0, y: -40, duration: .35 }, i + .75);
+});
+tl12.fromTo('.s12 .face', { y: '20vh' }, { y: '-20vh', ease: 'none', duration: 3 }, 0);
+const cur = $('#cursor');
+gsap.set(cur, { x: innerWidth * .72, y: innerHeight * .7 });
+ScrollTrigger.create({ trigger: '#s12', start: 'top center', end: 'bottom center', onToggle: s => gsap.to(cur, { opacity: s.isActive ? 1 : 0, duration: .4 }) });
+addEventListener('mousemove', e => gsap.to(cur, { x: e.clientX, y: e.clientY, duration: .5, ease: 'power3.out' }));
+
+// 13 · register: image grows to full screen, form appears
+gsap.timeline({ scrollTrigger: { trigger: '#s13', start: 'top top', end: '+=150%', pin: true, scrub: 1 } })
+  .to('.s13 figure', { width: '100vw', height: '100vh', ease: 'none', duration: 1 })
+  .fromTo('.s13 figure img', { scale: 1.3 }, { scale: 1, ease: 'none', duration: 1 }, 0)
+  .to('.s13 .form', { opacity: 1, duration: .35 }, .75);
+
+// footer marquee
+gsap.to('#mq', { xPercent: -50, ease: 'none', duration: 30, repeat: -1 });
+
+// ---- FILMING MODE ----
+// Space: auto-scroll at constant speed · R: back to top · F: fullscreen · ?speed=90 (seconds)
+const HIZ = +((q.get('speed')||q.get('hiz')) || 90);
+let oto = false;
+addEventListener('keydown', e => {
+  if (e.code === 'Space') { e.preventDefault(); oto = !oto; const H = document.documentElement.scrollHeight - innerHeight;
+    if (oto) lenis.scrollTo(H, { duration: HIZ * (1 - scrollY / H), easing: t => t }); else lenis.scrollTo(scrollY, { immediate: true }); }
+  if (e.key === 'r') { oto = false; lenis.scrollTo(0, { immediate: true }); }
+  if (e.key === 'f') { document.body.classList.add('film'); document.documentElement.requestFullscreen?.(); }
+});
+</script>
+</body>
+</html>

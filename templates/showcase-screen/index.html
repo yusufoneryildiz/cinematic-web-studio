@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Showcase Screen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="concepts.js"></script>
+<style>
+:root{--z:#1a0f0a;--z2:#3a1d10;--v:#f08a3c;--y:#f6ead8;--sure:8s}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--z);color:var(--y);font-family:Inter,sans-serif;cursor:none}
+body{background:radial-gradient(120% 90% at 70% 45%,var(--z2) 0%,var(--z) 62%)}
+
+/* ---------- top nav ---------- */
+nav{position:fixed;inset:0 0 auto 0;display:flex;align-items:center;padding:2.2vw 4vw;z-index:5;opacity:0;animation:in .9s .1s forwards}
+.logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.55vw;letter-spacing:.06em;line-height:1}
+.logo small{display:block;font:500 .62vw Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;opacity:.55;margin-top:.35vw}
+.links{display:flex;gap:2.6vw;margin:0 auto;font-size:.92vw;opacity:.75}
+.links span:first-child{opacity:1;border-bottom:1px solid var(--v);padding-bottom:.25vw}
+.sag{display:flex;align-items:center;gap:1.4vw;font-size:.9vw}
+.pill{background:var(--v);color:var(--z);font-weight:600;padding:.7vw 1.5vw;border-radius:99px}
+
+/* ---------- left copy ---------- */
+.metin{position:absolute;left:4vw;top:50%;transform:translateY(-50%);width:36vw;z-index:4}
+.ust{font-size:.85vw;letter-spacing:.24em;text-transform:uppercase;color:var(--v);display:flex;align-items:center;gap:.8vw}
+.ust::before{content:"";width:2.4vw;height:1px;background:var(--v)}
+h1{font-family:'Playfair Display',serif;font-weight:500;font-size:5.6vw;line-height:1.02;letter-spacing:-.01em;margin:1.4vw 0 1.6vw}
+h1 .l{display:block;overflow:hidden}
+h1 .l span{display:inline-block;transform:translateY(110%)}
+h1 .l:nth-child(2) span{font-style:italic;color:var(--v)}
+.metin p{font-size:1.08vw;line-height:1.65;opacity:.72;max-width:26vw}
+.cta{display:inline-flex;align-items:center;gap:.9vw;margin-top:2.2vw;font-size:.95vw;font-weight:600;border:1px solid color-mix(in srgb,var(--y) 30%,transparent);padding:1vw 1.8vw;border-radius:99px}
+.cta i{font-style:normal;display:inline-block;animation:ok 1.6s ease-in-out infinite}
+.fade{opacity:0;transform:translateY(1.2vw)}
+
+/* ---------- product / image stage ---------- */
+.sahne{position:absolute;right:0;top:54%;width:55vw;height:55vw;transform:translateY(-50%);z-index:2}
+.gorsel{position:absolute;inset:0;border-radius:50%;background-size:cover;background-position:center;opacity:0;
+  -webkit-mask:radial-gradient(closest-side,#000 62%,transparent 100%);mask:radial-gradient(closest-side,#000 62%,transparent 100%)}
+.gorsel.aktif{opacity:1;animation:kenburns var(--sure) linear forwards, yuz 6s ease-in-out infinite}
+.gorsel.cik{opacity:0;transition:opacity 1.2s}
+.halka{position:absolute;inset:7%;border-radius:50%;border:1px solid color-mix(in srgb,var(--v) 35%,transparent);animation:don 40s linear infinite}
+.halka::after{content:"";position:absolute;top:-.45vw;left:50%;width:.9vw;height:.9vw;border-radius:50%;background:var(--v);box-shadow:0 0 1.5vw var(--v)}
+canvas{position:absolute;inset:0;z-index:3;pointer-events:none}
+
+/* ---------- ornaments ---------- */
+.kart{position:absolute;left:40vw;bottom:9vw;z-index:4;padding:1.1vw 1.4vw;border-radius:1vw;min-width:15vw;
+  background:color-mix(in srgb,var(--z) 55%,transparent);backdrop-filter:blur(14px);border:1px solid color-mix(in srgb,var(--y) 14%,transparent);
+  animation:yuz 5s ease-in-out infinite}
+.kart b{display:block;font-size:.95vw}.kart span{font-size:.78vw;opacity:.6}
+.kart em{position:absolute;right:1vw;top:1vw;width:.6vw;height:.6vw;border-radius:50%;background:#4ade80;box-shadow:0 0 .8vw #4ade80;animation:nabiz 1.8s infinite}
+.noktalar{position:absolute;right:2.2vw;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.9vw;z-index:5}
+.noktalar i{width:.45vw;height:.45vw;border-radius:50%;background:var(--y);opacity:.3;transition:.4s}
+.noktalar i.on{opacity:1;height:2vw;border-radius:1vw;background:var(--v)}
+.ok{position:absolute;top:50%;z-index:5;font-size:1.3vw;opacity:.45}.ok.l{left:1.3vw}.ok.r{right:4.6vw}
+.alt{position:absolute;left:4vw;bottom:2.6vw;display:flex;gap:2.4vw;font-size:.78vw;opacity:.5;letter-spacing:.14em;text-transform:uppercase;z-index:4}
+.say{position:absolute;right:4vw;bottom:2.4vw;font-family:'Playfair Display',serif;font-size:1.1vw;z-index:4}
+.say b{font-size:2vw;color:var(--v)}
+.sohbet{position:absolute;right:4vw;bottom:5.6vw;width:3.2vw;height:3.2vw;border-radius:50%;background:var(--y);color:var(--z);display:grid;place-items:center;font-size:1.3vw;z-index:5;animation:nabiz2 2.4s infinite}
+.bar{position:absolute;left:0;bottom:0;height:2px;background:var(--v);z-index:6}
+.bar.go{animation:bar var(--sure) linear forwards}
+
+@keyframes in{to{opacity:1;transform:none}}
+@keyframes up{to{transform:none}}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.14)}}
+@keyframes yuz{0%,100%{translate:0 0}50%{translate:0 -1.1vw}}
+@keyframes don{to{rotate:360deg}}
+@keyframes ok{0%,100%{transform:none}50%{transform:translateX(.4vw)}}
+@keyframes nabiz{50%{opacity:.35}}
+@keyframes nabiz2{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--y) 45%,transparent)}100%{box-shadow:0 0 0 1.4vw transparent}}
+@keyframes bar{from{width:0}to{width:100%}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo" id="marka"></div>
+  <div class="links" id="menu"></div>
+  <div class="sag"><span>Log in</span><span class="pill" id="buton"></span></div>
+</nav>
+
+<section class="metin">
+  <div class="ust fade" id="ust"></div>
+  <h1 id="baslik"></h1>
+  <p class="fade" id="yazi"></p>
+  <a class="cta fade" id="cta"></a>
+</section>
+
+<div class="sahne" id="sahne"><div class="halka"></div></div>
+<canvas id="c"></canvas>
+
+<div class="kart fade" id="kart"><em></em></div>
+<div class="noktalar" id="noktalar"></div>
+<div class="ok l">‹</div><div class="ok r">›</div>
+<div class="alt"><span>Instagram</span><span>WhatsApp</span><span>Google Maps</span></div>
+<div class="sohbet"><svg viewBox="0 0 24 24" width="45%" fill="currentColor"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.3 1.1 4.4 2.9 6L4 21l4.1-1.8c1.2.4 2.5.6 3.9.6 5.5 0 10-3.8 10-8.4S17.5 3 12 3z"/></svg></div>
+<div class="say" id="say"></div>
+<div class="bar" id="bar"></div>
+
+<script>
+const q = new URLSearchParams(location.search);
+const K = window.CONCEPTS, anahtar = (q.get("c")||q.get("k")) in K ? (q.get("c")||q.get("k")) : Object.keys(K)[0], k = K[anahtar];
+const SURE = +(q.get("loop") || q.get("sure") || 8) * 1000;
+const $ = id => document.getElementById(id), r = document.documentElement.style;
+r.setProperty("--z", k.theme.bg); r.setProperty("--z2", k.theme.bg2);
+r.setProperty("--v", k.theme.accent); r.setProperty("--y", k.theme.ink); r.setProperty("--sure", SURE / 1000 + "s");
+document.title = k.brand;
+
+$("marka").innerHTML = `${k.brand}<small>${k.tagline}</small>`;
+$("menu").innerHTML = k.menu.map(m => `<span>${m}</span>`).join("");
+$("buton").textContent = k.button;
+$("ust").textContent = k.eyebrow;
+$("yazi").textContent = k.text;
+$("cta").innerHTML = `${k.cta} <i>→</i>`;
+$("kart").insertAdjacentHTML("beforeend", `<b>${k.card.title}</b><span>${k.card.text}</span>`);
+$("baslik").innerHTML = k.title.map(l => `<span class="l"><span>${l}</span></span>`).join("");
+
+// entrance animation (replays on every slide → there is motion whenever you start filming)
+function giris() {
+  document.querySelectorAll("h1 .l span").forEach((s, i) => {
+    s.style.animation = "none"; s.offsetWidth; s.style.animation = `up 1s cubic-bezier(.2,.8,.2,1) ${.15 + i * .12}s forwards`;
+  });
+  document.querySelectorAll(".fade").forEach((s, i) => {
+    s.style.animation = "none"; s.offsetWidth; s.style.animation = `in .9s ease ${.45 + i * .12}s forwards`;
+  });
+}
+
+// image loop
+const sahne = $("sahne");
+const els = k.images.map(src => { const d = document.createElement("div"); d.className = "gorsel"; d.style.backgroundImage = `url(${src})`; sahne.prepend(d); return d; });
+$("noktalar").innerHTML = els.map(() => "<i></i>").join("");
+let n = -1;
+function sonraki() {
+  if (n >= 0) { els[n].classList.remove("aktif"); els[n].classList.add("cik"); }
+  n = (n + 1) % els.length;
+  const e = els[n]; e.classList.remove("cik"); e.style.animation = "none"; e.offsetWidth; e.style.animation = ""; e.classList.add("aktif");
+  document.querySelectorAll(".noktalar i").forEach((d, i) => d.classList.toggle("on", i === n));
+  $("say").innerHTML = `<b>0${n + 1}</b> / 0${els.length}`;
+  const b = $("bar"); b.classList.remove("go"); b.offsetWidth; b.classList.add("go");
+  giris();
+}
+sonraki(); setInterval(sonraki, SURE);
+
+// particles: sparks (fast, upward) · dust (slow) · bokeh (large soft lights)
+const c = $("c"), x = c.getContext("2d"); let W, H;
+const boy = () => { W = c.width = innerWidth * devicePixelRatio; H = c.height = innerHeight * devicePixelRatio; };
+boy(); addEventListener("resize", boy);
+const tip = k.particles, renk = k.theme.accent;
+const P = Array.from({ length: tip === "bokeh" ? 26 : 70 }, () => yeni(true));
+function yeni(ilk) {
+  const s = devicePixelRatio;
+  return {
+    x: W * (.45 + Math.random() * .5), y: ilk ? Math.random() * H : H + 20,
+    r: (tip === "bokeh" ? 3 + Math.random() * 9 : 1 + Math.random() * 2.6) * s,
+    vy: (tip === "sparks" ? 1.2 + Math.random() * 2.2 : .25 + Math.random() * .6) * s,
+    vx: (Math.random() - .5) * .6 * s, a: Math.random() * .8 + .2, t: Math.random() * 6.28,
+  };
+}
+(function ciz() {
+  x.clearRect(0, 0, W, H);
+  for (const p of P) {
+    p.y -= p.vy; p.t += .03; p.x += p.vx + Math.sin(p.t) * .5;
+    if (p.y < -30) Object.assign(p, yeni(false));
+    const al = p.a * Math.min(1, (H - p.y) / (H * .25)) * (tip === "bokeh" ? .5 : 1);
+    x.globalAlpha = Math.max(0, al); x.fillStyle = renk;
+    if (tip !== "bokeh") { x.shadowBlur = 12 * devicePixelRatio; x.shadowColor = renk; } else x.shadowBlur = 0;
+    x.beginPath(); x.arc(p.x, p.y, p.r, 0, 6.28); x.fill();
+  }
+  requestAnimationFrame(ciz);
+})();
+
+// F key = fullscreen (for filming)
+addEventListener("keydown", e => { if (e.key === "f") document.documentElement.requestFullscreen?.(); });
+</script>
+</body>
+</html>

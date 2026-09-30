@@ -1,0 +1,282 @@
+[
+ {
+  "id": "koru/hero-model",
+  "ar": "3:4",
+  "p": "Editorial fashion portrait of an elegant woman in a black satin strapless evening gown, dark hair in a sleek low bun, statement earrings, red lips, looking over her shoulder, standing against a pure solid black background, studio lighting from the side, full upper body, luxury advertising campaign, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/about",
+  "ar": "16:9",
+  "p": "Close-up architectural photograph at dusk of the upper floors of an elegant dark-brick New York style residential tower with warm bronze LED cornice lighting along the roofline, Istanbul, golden reflections of sunset in the tall windows, city lights below, drone perspective, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/loc-park",
+  "ar": "3:4",
+  "p": "Photograph of a couple walking on a tree-lined path in a manicured park at golden hour, Istanbul, autumn maples, soft backlight, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/loc-school",
+  "ar": "3:4",
+  "p": "Photograph of a modern private school building facade with glass and warm wood, children walking in with parents, morning light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/loc-sport",
+  "ar": "3:4",
+  "p": "Photograph of a premium indoor tennis court with a woman serving, glass roof, morning light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/loc-sea",
+  "ar": "3:4",
+  "p": "Photograph of the Bosphorus waterfront promenade at sunset, a person jogging, boats, warm light on water, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/loc-rest",
+  "ar": "3:4",
+  "p": "Photograph of an elegant restaurant terrace at night with candles, waiter pouring wine, city lights bokeh, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/panorama",
+  "ar": "16:9",
+  "p": "Photograph of a stylish couple in evening wear embracing on a rooftop terrace at dusk, panoramic Istanbul skyline and Bosphorus behind them, wide shot, romantic cinematic, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/arch-1",
+  "ar": "16:9",
+  "p": "Wide architectural photograph at sunset of three elegant dark-brick New York style residential tower with warm bronze LED cornice lighting along the roofline, Istanbul towers rising above a low-rise neighbourhood, dramatic sky, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/arch-2",
+  "ar": "1:1",
+  "p": "Detail photograph of a elegant dark-brick New York style residential tower with warm bronze LED cornice lighting along the roofline, Istanbul rooftop corner, warm LED strip glowing along the cornice, twilight sky, string lights below, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/arch-3",
+  "ar": "3:4",
+  "p": "Low angle photograph looking straight up at a elegant dark-brick New York style residential tower with warm bronze LED cornice lighting along the roofline, Istanbul, twilight sky, glowing warm windows, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/mat-1",
+  "ar": "3:4",
+  "p": "Photograph of a luxury lobby detail: white orchids on a black marble console, brass framed mirror, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/mat-2",
+  "ar": "3:4",
+  "p": "Photograph of a row of tall brushed brass cylinder pendant lamps glowing against a dark marble wall, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/swatch-1",
+  "ar": "1:1",
+  "p": "Macro photograph of polished black marble with gold veins, luxury material texture, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/swatch-2",
+  "ar": "1:1",
+  "p": "Macro photograph of brushed brass metal surface with fine grain, warm reflections, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/swatch-3",
+  "ar": "1:1",
+  "p": "Macro photograph of dark walnut wood veneer with fine grain, satin finish, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/swatch-4",
+  "ar": "1:1",
+  "p": "Macro photograph of white calacatta porcelain stoneware with soft grey veins, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/swatch-5",
+  "ar": "1:1",
+  "p": "Macro photograph of faceted crystal chandelier drops catching warm light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/swatch-6",
+  "ar": "1:1",
+  "p": "Macro photograph of bronze woven metal mesh panel with warm backlight, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/swatch-7",
+  "ar": "1:1",
+  "p": "Macro photograph of cognac full-grain leather upholstery with stitching, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/gal-1",
+  "ar": "3:4",
+  "p": "Photograph of a grand hotel style residential lobby, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, tall mirrors, reception desk, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/gal-2",
+  "ar": "1:1",
+  "p": "Photograph of a luxury living room with floor to ceiling windows overlooking the Bosphorus at dusk, neoclassical furniture, fireplace, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/gal-3",
+  "ar": "16:9",
+  "p": "Photograph of the elegant dark-brick New York style residential tower with warm bronze LED cornice lighting along the roofline, Istanbul courtyard at night with a sculptural fountain, lit landscaping, benches, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/gal-4",
+  "ar": "3:4",
+  "p": "Photograph of a marble bathroom with freestanding bathtub, brass fixtures, city view window at night, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/gal-5",
+  "ar": "1:1",
+  "p": "Photograph of a children playroom with wooden slide and soft play area, warm pastel palette, premium finishes, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/gal-6",
+  "ar": "3:4",
+  "p": "Photograph of a family with two children laughing in an elegant living room, golden hour window light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/day-1",
+  "ar": "16:9",
+  "p": "Photograph of dawn light entering a luxury bedroom through panoramic windows with a view of Istanbul and the Bosphorus, silk bedding, soft pink sky, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/day-2",
+  "ar": "16:9",
+  "p": "Photograph of a woman doing yoga at sunrise on a rooftop terrace with wooden deck, city skyline behind, soft warm light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/day-3",
+  "ar": "16:9",
+  "p": "Photograph of a concierge in a dark suit greeting a resident in a grand hotel style lobby, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/day-4",
+  "ar": "16:9",
+  "p": "Photograph of a private co-working lounge with tall panoramic windows, walnut tables, a businessman on a call, warm afternoon light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/day-5",
+  "ar": "16:9",
+  "p": "Photograph of an intimate tea room at night, brass tea set on black marble, low warm lamps, velvet armchairs, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/lobby",
+  "ar": "16:9",
+  "p": "Wide photograph of a grand residential lobby inspired by classic grand hotels, two-meter mirrors, dark glossy stone walls, cascading crystal chandeliers, a woman in a black dress walking through, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/adv-1",
+  "ar": "3:4",
+  "p": "Photograph of a woman in a white silk blouse reading a tablet in a luxurious lobby lounge, coffee on a marble table, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/adv-2",
+  "ar": "3:4",
+  "p": "Photograph of a smiling concierge woman handing keys to a resident in a lobby with white orchids, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/adv-3",
+  "ar": "3:4",
+  "p": "Photograph of a bright children room with bookshelves, a wooden slide and a small tent, two children playing, premium finishes, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/adv-4",
+  "ar": "3:4",
+  "p": "Photograph of a man in a blue blazer on a phone in a leather armchair in a library-style meeting room, walnut shelves, warm lamp, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/adv-5",
+  "ar": "3:4",
+  "p": "Photograph of four friends laughing at an outdoor courtyard lounge at night beside a fire pit, string lights, greenery, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/fit-1",
+  "ar": "16:9",
+  "p": "Photograph of a woman floating in a 25 meter indoor swimming pool with dark stone walls and warm underwater lighting, luxury residential spa, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/fit-2",
+  "ar": "3:4",
+  "p": "Photograph of a woman in a black swimsuit sitting in a warm wooden sauna, soft light through cedar slats, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/fit-3",
+  "ar": "3:4",
+  "p": "Photograph of a woman in black sportswear training on a cable machine in a premium gym with dark walls and warm lighting, tall windows, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/fit-4",
+  "ar": "3:4",
+  "p": "Photograph of a man in boxing gloves hitting a leather heavy bag in a dark premium boxing gym, dramatic warm rim light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/fit-5",
+  "ar": "16:9",
+  "p": "Photograph of a woman in a yoga pose on a mat in a serene yoga studio with walnut slat walls and soft daylight, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/infra-bg",
+  "ar": "16:9",
+  "p": "Photograph at night of the ground floor of an elegant dark-brick New York style residential tower with warm bronze LED cornice lighting along the roofline, Istanbul, boutique shopfronts with warm light, trees with string lights, people strolling, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/infra-1",
+  "ar": "3:4",
+  "p": "Photograph of an elegant restaurant interior with a wine wall, red velvet chairs, brass lamps, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/infra-2",
+  "ar": "3:4",
+  "p": "Photograph of a luxury beauty salon interior with gold mirrors, marble stations, a stylist working, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/infra-3",
+  "ar": "3:4",
+  "p": "Photograph of a small white poodle being groomed in a premium pet spa with marble counters and warm light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/park-1",
+  "ar": "16:9",
+  "p": "Photograph of a private residential park with a sculptural fountain, maple and birch trees, evening lit paths, elegant dark-brick New York style residential tower with warm bronze LED cornice lighting along the roofline, Istanbul in background, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/park-2",
+  "ar": "3:4",
+  "p": "Photograph of a woman with a golden retriever walking under birch trees on a stone path, golden hour, lush greenery, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/apt-hero",
+  "ar": "16:9",
+  "p": "Photograph of a refined neoclassical living room with marble fireplace, velvet sofas, floor to ceiling windows framing Istanbul skyline at dusk, neoclassical luxury interior, dark glossy stone walls, brass details, crystal chandelier, warm ambient light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/svc-1",
+  "ar": "3:4",
+  "p": "Photograph of a hand pressing a brass smart home panel on a dark marble wall, warm backlight, close-up, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/svc-2",
+  "ar": "3:4",
+  "p": "Photograph of a luxury elevator interior with bronze mirror walls, a woman in a black coat, warm light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/pent-1",
+  "ar": "16:9",
+  "p": "Photograph at night of a penthouse living room with a glass roof showing the night sky, suspended black fireplace, cream armchairs, city lights through tall windows, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/pent-2",
+  "ar": "3:4",
+  "p": "Photograph of a woman in a black evening dress standing at a floor to ceiling window at night, city lights, penthouse interior, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/spec-1",
+  "ar": "1:1",
+  "p": "Photograph of a luxury bedroom with 4 meter high ceilings, tall curtains, upholstered headboard, morning light, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/spec-2",
+  "ar": "1:1",
+  "p": "Photograph of a living room with 3.6 meter tall windows, sheer curtains, suspended fireplace, cream sofas, city view, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ },
+ {
+  "id": "koru/closing",
+  "ar": "16:9",
+  "p": "Aerial photograph at night of three elegant dark-brick New York style residential tower with warm bronze LED cornice lighting along the roofline, Istanbul towers, Bosphorus bridge lights in the distance, moody blue and bronze, cinematic editorial real estate photography, warm bronze and deep navy color grade, soft film grain, ultra detailed, no text, no logos, no watermark"
+ }
+]
